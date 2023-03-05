@@ -50,7 +50,7 @@ export default class Fields extends React.Component {
                             name='trip' 
                             id='trip-field' 
                             required >
-                        <option className={styles.option} value='' hidden>Куда хотите ехать</option>
+                        <option className={styles.option} value='' hidden disabled>Куда хотите ехать</option>
                         {optionsElements}
                     </select>
                 </div>

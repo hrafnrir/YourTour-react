@@ -21,15 +21,13 @@
 
 
 @mixin slider($pointer) {
-	@include breakpoint(large) {
-		animation-name: $pointer;
+	animation-name: $pointer;
 
-		@if $pointer == slideUp {
-			animation-duration:  0.6s;
-		}
+	@if $pointer == slideUp {
+		animation-duration:  0.6s;
+	}
 
-		@if $pointer == slideDown {
-			animation-duration:  0.6s;
-		}
+	@if $pointer == slideDown {
+		animation-duration:  0.6s;
 	}
 }

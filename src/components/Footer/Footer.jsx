@@ -16,7 +16,7 @@ const Footer = () => {
     return (
         <footer className={styles.mainWrapper}>
     		<div className={styles.container}>
-    			<p className={styles.text}>Наши социальные сети</p>
+    			<p className={styles.description}>Наши социальные сети</p>
     			<div className={styles.socialNetworks}>
     				{socialNetworksElements}
     			</div>
