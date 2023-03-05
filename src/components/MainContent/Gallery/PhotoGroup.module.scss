@@ -1,0 +1,31 @@
+@import "../../../styles/general";
+
+
+.mainWrapper {
+	margin-top: 48px;
+	display: grid;
+	grid: {
+		template-columns: repeat(6, 1fr);
+		template-rows: repeat(3, 110px);
+		column-gap: 10px;
+		row-gap: 18px;
+	}
+
+	@include breakpoint(medium) {
+		margin-top: 98px;
+		grid: {
+			template-columns: repeat(12, 1fr);
+			template-rows: repeat(3, 301px);
+			column-gap: 20px;
+			row-gap: 30px;
+		}
+	}
+
+	@include breakpoint(large) {
+		margin-top: 100px;
+		grid: {
+			template-columns: repeat(20, 1fr);
+			column-gap: 30px;
+		}
+	}
+}

@@ -1,0 +1,117 @@
+@import "../../styles/general";
+
+
+.mainWrapper {
+	@extend %block;
+
+	margin: 0;
+	padding-top: 21px;
+	padding-bottom: 21px;
+	background-color: $biege-200;
+
+	@include breakpoint(medium) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+
+.container {
+	@extend %container-m;
+
+	@include breakpoint(medium) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+
+.description {
+	width: 100%;
+	text-align: center;
+
+	@include breakpoint(medium) {
+		display: inline-block;
+		max-width: 300px;
+		text-align: left;
+	}
+}
+
+
+.socialNetworks {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 9px;
+
+	@include breakpoint(medium) {
+		margin-top: 0;
+	}
+}
+
+
+.socialNetworks__item {
+	position: relative;
+	margin-right: 15px;
+	padding-left: 25px;
+
+	@include breakpoint(medium) {
+		margin-right: 26px;
+		padding-left: 36px;
+	}
+
+	&:nth-child(3n) {
+		margin-right: 0;
+	}
+
+	&:last-child {
+		@include breakpoint(medium) {
+			margin-right: 0;
+		}		
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		background: {
+			repeat: no-repeat;
+			position: center;
+			size: contain;
+		}
+
+		@include breakpoint(medium) {
+			width: 26px;
+			height: 26px;
+		}
+	}
+
+	&_ig:before {
+		background-image: url("../../assets/icons/inst.png");
+	}
+
+	&_fb:before {
+		background-image: url("../../assets/icons/fb.png");
+	}
+
+	&_vk:before {
+		background-image: url("../../assets/icons/vk.png");
+	}
+}
+
+
+.socialNetworks__name {
+	color: $black;
+
+	.socialNetworks__item:hover & {
+		@include breakpoint(large) {
+			margin-bottom: -1px;
+			border-bottom: 1px solid $black;
+		}
+	}
+}

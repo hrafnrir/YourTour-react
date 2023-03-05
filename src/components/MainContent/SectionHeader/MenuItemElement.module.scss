@@ -1,0 +1,28 @@
+@import "../../../styles/general";
+
+.item {
+	margin: 5px;
+	@include breakpoint(medium) {
+		margin: 5px 15px;
+	}
+}
+
+.link {
+	@include mob-p-big;
+	display: inline-block;
+	color: $black;
+	@include breakpoint(medium) {
+		@include p-big;
+	}
+	@include breakpoint(large) {
+		&:hover {
+			border-bottom: 2px solid $black;
+			margin-bottom: -2px;
+		}
+	}
+	&_selected, &_selected:hover {
+		color: $orange-200;
+		border-bottom: 2px solid $orange-200;
+    	margin-bottom: -2px;
+	}
+}

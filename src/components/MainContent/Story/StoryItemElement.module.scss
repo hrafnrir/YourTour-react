@@ -1,0 +1,201 @@
+@import "../../../styles/general";
+
+
+.item {
+    position: relative;
+	margin-bottom: 20px;
+    padding: 30px;
+	width: 100%;
+	height: 455px;
+	border-radius: 20px;
+	background-image: linear-gradient(270deg, 
+                    rgba(0, 0, 0, 0) 0.01%, 
+                    rgba(0, 0, 0, 0.2) 100%);
+	overflow: hidden;
+
+	@include breakpoint(medium) {
+        margin-bottom: 50px;
+		height: 567px;
+		padding: 60px;
+		border-radius: 50px;
+	}
+
+    &:last-child {
+		margin-bottom: 0;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -10;
+		width: 100%;
+		height: 100%;
+		background: {
+			color: $black;
+			repeat: no-repeat;
+			position: center;
+			size: cover;
+		}
+
+		@include breakpoint(large) {
+			transform: scale(1);
+			transition: {
+				duration: 300ms;
+				timing-function: ease;
+				property: transform;
+			}
+		}
+	}
+
+	&:hover:before {
+		@include breakpoint(large) {
+			transform: scale(1.2);
+		}
+	}
+
+	&_1:before {
+		background-image: url("../../../assets/images/Story/story photo-1.jpg");
+	}
+
+	&_2:before {
+		background-image: url("../../../assets/images/Story/story photo-2.jpg");
+	}
+
+	&_3:before {
+		background-image: url("../../../assets/images/Story/story photo-3.jpg");
+	}
+}
+
+
+.heading {
+    @include mob-h3;
+
+	margin-bottom: 22px;
+	width: 150px;
+    color: $white;
+
+	@include breakpoint(medium) {
+        @include h3;
+
+		margin-bottom: 37px;
+		width: 100%;
+	}
+}
+
+
+.description {
+	line-height: 143%;
+	color: $white;
+
+	@include breakpoint(medium) {
+		max-width: 560px;
+		line-height: 141%;
+	}
+}
+
+
+.list {
+	margin-left: 10px;
+	color: $white;
+
+	@include breakpoint(medium) {
+		margin-left: 13px;
+		max-width: 560px;
+	}
+
+	& li {
+		position: relative;
+		padding-left: 15px;
+
+		@include breakpoint(medium) {
+			padding-left: 18px;
+		}
+
+		&:before {
+			content: "•";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: auto;
+			height: auto;
+		}
+	}
+}
+
+
+.btn {
+	@extend %btn-more;
+}
+
+
+.btnContent {
+	@extend %btn-more-content;
+	@include btn-more-content-state(story);
+
+	left: 30px;
+	bottom: 30px;
+
+    &:after {
+		background-image: url("../../../assets/icons/arrow bt.svg");
+	}
+
+	@include breakpoint(medium) {
+		left: 60px;
+		bottom: 60px;
+	}
+
+	@include breakpoint(large) {
+		.item:hover & {
+			left: 40px;
+			bottom: 53px;
+		}
+
+		.item:active & {
+			left: 40px;
+			bottom: 53px;
+		}
+	}
+}
+
+
+.socialNetworks {
+	display: none;
+
+	@include breakpoint(medium) {
+		display: flex;
+		position: absolute;
+		bottom: 60px;
+		right: 60px;
+		max-width: 450px;
+	}
+}
+
+
+.socialNetworks__item {
+	color: $white;
+	margin-right: 36px;
+	z-index: 100;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:hover {
+		@include breakpoint(large) {
+			margin-bottom: -1px;
+			border-bottom: 1px solid $white;
+		}
+	}
+
+	&:active {
+		color: $orange-200;
+		margin-bottom: -1px;
+		border-bottom: 1px solid $orange-200;
+
+		.btnContent {
+			background-color: $green-400 !important;
+		}
+	}
+}

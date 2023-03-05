@@ -1,0 +1,11 @@
+@import "../../../styles/general";
+
+
+.mainWrapper {
+	@extend %block;
+}
+
+
+.container {
+	@extend %container-l;
+}

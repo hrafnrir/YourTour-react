@@ -1,0 +1,29 @@
+@import "../../../styles/general";
+
+
+.item:not(:last-child) {
+	@include breakpoint(medium) {
+		margin-right: 30px;
+	}
+
+	@include breakpoint(large) {
+		margin-right: 50px;
+	}
+}
+
+
+.link {
+	@extend %header-link;
+
+	@include breakpoint(medium) {
+		display: inline-block;
+	}
+
+	&_unfixedHeader {
+		@extend %header-link_unfixed-header;
+	}
+	
+	&_fixedHeader {
+		@extend %header-link_fixed-header;
+	}
+}

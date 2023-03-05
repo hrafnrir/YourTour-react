@@ -1,0 +1,63 @@
+@import "../../../../styles/general";
+
+
+.container {
+	margin-top: 40px;
+    padding: 20px;
+	padding-bottom: 40px;
+	width: 100%;
+	border-radius: 30px;
+	background-color: $white;
+
+	@include breakpoint(medium) {
+		margin-top: 100px;
+		padding: 60px;
+		border-radius: 50px;
+	}
+    
+	@include breakpoint(large) {
+		padding: 70px;
+	}
+}
+
+
+.btnSubmit {
+	@extend %btn-form;
+
+	margin-right: 10px;
+	color: $white;
+	background-color: $green-400;
+
+	@include breakpoint(medium) {
+		margin-right: 30px;
+	}
+
+	@include breakpoint(large) {
+		&:hover {
+			background-color: $green-300;
+		}
+	}
+
+	&:active {
+		background-color: $green-200;
+	}
+}
+
+
+.btnReset {
+	@extend %btn-form;
+
+	margin-left: -4px;
+	color: $green-400;
+	background-color: $green-100;
+
+	@include breakpoint(large) {
+		&:hover {
+			background-color: $gray-100;
+		}
+	}
+	
+	&:active {
+		background-color: $gray-200;
+	}
+}

@@ -1,0 +1,87 @@
+@import "../../../../styles/general";
+
+
+.container {
+	margin-bottom: 30px;
+
+	@include breakpoint(medium) {
+		margin-bottom: 32px;
+	}
+}
+
+
+.checkbox {
+	opacity: 0;
+	z-index: -1;
+	position: absolute;
+}
+
+
+.label {
+	position: absolute;
+	display: inline-block;
+	min-width: 280px;
+	height: 24px;
+
+	@include breakpoint(medium) {
+		min-width: 350px;
+		height: 26px;
+		margin-top: 1px;
+	}
+
+	@include breakpoint(large) {
+		min-width: 360px;
+		margin-top: 2px;
+		cursor: pointer;
+	}
+
+	&:before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		background: {
+			image: url("../../../../assets/icons/checkbox-1.svg");
+			position: top;
+			repeat: no-repeat;
+		}
+
+		@include breakpoint(medium) {
+			width: 26px;
+			height: 26px;
+			background-image: url("../../../../assets/icons/checkbox-3.svg");
+		}
+
+		.checkbox:checked + & {
+			background-image: url("../../../../assets/icons/checkbox-2.svg");
+
+			@include breakpoint(medium) {
+				background-image: url("../../../../assets/icons/checkbox-4.svg");
+			}
+		}
+	}
+}
+
+
+.terms {
+	display: inline-block;
+	padding-left: 30px;
+	white-space: pre-wrap;
+
+	@include breakpoint(medium) {
+		@include p-small;
+		padding-left: 37px;
+	}
+
+	@include breakpoint(large) {
+		padding-left: 45px;
+	}
+}
+
+
+.terms__link {
+	@extend %text-link;
+}

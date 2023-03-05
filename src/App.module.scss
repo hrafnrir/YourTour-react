@@ -1,0 +1,10 @@
+@import "./styles/general";
+
+body {
+	color: $gray-300;
+	background-color: $biege-100;
+	@include mob-p-normal;
+	@include breakpoint(medium) {
+		@include p-normal;
+	}
+}

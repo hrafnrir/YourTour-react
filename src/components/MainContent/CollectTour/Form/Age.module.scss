@@ -1,0 +1,71 @@
+@import "../../../../styles/general";
+
+
+.container {
+	margin-bottom: 30px;
+	@include breakpoint(medium) {
+		margin-bottom: 31px;
+	}
+}
+
+
+.label {
+	display: block;
+	width: 100%;
+	color: $black;
+	margin-bottom: 8px;
+}
+
+
+.radio {
+	opacity: 0;
+	z-index: -1;
+	position: absolute;
+}
+
+
+.radioLabel {
+	position: relative;
+	display: inline-block;
+	margin-right: 28px;
+	margin-top: 2px;
+	color: $black;
+	padding-left: 30px;
+
+	@include breakpoint(medium) {
+		margin-right: 26px;
+		padding-left: 37px;
+		margin-top: 0;
+	}
+
+	@include breakpoint(large) {
+		cursor: pointer;
+	}
+
+	&:before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: {
+			image: url("../../../../assets/icons/radiobutton-1.svg");
+			position: left center;
+			repeat: no-repeat;
+		}
+
+		@include breakpoint(medium) {
+			background-image: url("../../../../assets/icons/radiobutton-3.svg");
+		}
+
+		.radio:checked + & {
+			background-image: url("../../../../assets/icons/radiobutton-2.svg");
+
+			@include breakpoint(medium) {
+				background-image: url("../../../../assets/icons/radiobutton-4.svg");
+			}
+		}
+	}
+}

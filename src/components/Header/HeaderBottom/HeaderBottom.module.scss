@@ -1,0 +1,87 @@
+@import "../../../styles/general";
+
+
+.container {
+	@extend %container-m;
+	
+	padding-top: 58px;
+
+		@include breakpoint(medium) {
+			padding-top: 125px;
+		}
+}
+
+
+.heading {
+	@include mob-h1-2;
+
+	text-align: center;
+	color: $white;
+	margin: 0;
+
+	@include breakpoint(medium) {
+		@include h1;
+	}
+
+	@include breakpoint(large) {
+		margin-left: 200px;
+		margin-right: 200px;
+	}
+}
+
+
+.description {
+	color: $white;
+	text-align: center;
+	margin: 0 5px;
+	margin-top: 40px;
+
+	@include breakpoint(medium) {
+		max-width: 420px;
+		margin: {
+			left: auto;
+			right: auto;
+			top: 50px;
+		}
+	}
+
+	@include breakpoint(large) {
+		max-width: 570px;
+	}
+}
+
+
+.containerBtn {
+	text-align: center;
+	margin-top: 40px;
+
+	@include breakpoint(medium) {
+		margin-top: 50px;
+	}
+}
+
+
+.btn {
+	display: inline-block;
+	background-color: $white;
+	color: $black;
+	border-radius: 10px;
+	text-align: center;
+	padding: 5px 20px;
+
+	@include breakpoint(medium) {
+		@include p-small;
+	}
+
+	@include breakpoint(large) {
+		&:hover {
+			background-color: $orange-200;
+			color: $white;
+		}
+	}
+
+	&:active {
+		background-color: $orange-100;
+		color: $black;
+	}
+}

@@ -1,0 +1,111 @@
+$main-font: Roboto, Arial, sans-serif;
+
+@mixin h1 {
+    font: {
+        family: $main-font;
+        weight: 700;
+        size: 96px;
+    }
+    line-height: 109%;
+    letter-spacing: 0.02em;
+}
+
+@mixin h2 {
+    font: {
+        family: $main-font;
+        weight: 700;
+        size: 59px;
+    }
+    line-height: 124%;
+    letter-spacing: normal;
+}
+
+@mixin h3 {
+    font: {
+        family: $main-font;
+        weight: 500;
+        size: 35px;
+    }
+    line-height: 122%;
+    letter-spacing: normal;
+}
+
+@mixin p-big {
+    font: {
+        family: $main-font;
+        weight: 700;
+        size: 23px;
+    }
+    line-height: 122%;
+    letter-spacing: normal;
+}
+
+@mixin p-normal {
+    font: {
+        family: $main-font;
+        weight: 400;
+        size: 20px;
+    }
+    line-height: 142%;
+    letter-spacing: normal;
+}
+
+@mixin p-small {
+    font: {
+        family: $main-font;
+        weight: 400;
+        size: 17px;
+    }
+    line-height: 142%;
+    letter-spacing: -0.01em;
+}
+
+@mixin mob-h1-2 {
+    font: {
+        family: $main-font;
+        weight: 700;
+        size: 34px;
+    }
+    line-height: 112%;
+    letter-spacing: 0.02em;
+}
+
+@mixin mob-h3 {
+    font: {
+        family: $main-font;
+        weight: 700;
+        size: 23px;
+    }
+    line-height: 120%;
+    letter-spacing: 0.04em;
+}
+
+@mixin mob-p-big {
+    font: {
+        family: $main-font;
+        weight: 700;
+        size: 16px;
+    }
+    line-height: 142%;
+    letter-spacing: normal;
+}
+
+@mixin mob-p-normal {
+    font: {
+        family: $main-font;
+        weight: 400;
+        size: 16px;
+    }
+    line-height: 142%;
+    letter-spacing: normal;
+}
+
+@mixin mob-p-small {
+    font: {
+        family: $main-font;
+        weight: 400;
+        size: 16px;
+    }
+    line-height: 142%;
+    letter-spacing: -0.01em;
+}

@@ -1,0 +1,151 @@
+@import "../../../styles/general";
+
+
+.item {
+    position: relative;
+	margin-bottom: 18px;
+    width: 100%;
+	height: 318px;
+	padding: 25px;
+	background-image: linear-gradient(360deg, 
+					rgba(0, 0, 0, 0.4) 0%, 
+					rgba(0, 0, 0, 0.06) 48.44%, 
+					rgba(0, 0, 0, 0.5) 100%);
+	border-radius: 20px;
+	overflow: hidden;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -10;
+		width: 100%;
+		height: 100%;
+		background: {
+			color: $black; 
+			repeat: no-repeat;
+			position: center;
+			size: cover;
+		}
+	}
+
+	&_1:before {
+		background-image: url("../../../assets/images/ChooseTour/card tour photo-1.jpg");
+	}
+
+	&_2:before {
+		background-image: url("../../../assets/images/ChooseTour/card tour photo-2.jpg");
+	}
+
+	&_3:before {
+		background-image: url("../../../assets/images/ChooseTour/card tour photo-3.jpg");
+	}
+
+	&_4:before {
+		background-image: url("../../../assets/images/ChooseTour/card tour photo-4.jpg");
+	}
+
+	&_5:before {
+		background-image: url("../../../assets/images/ChooseTour/card tour photo-5.jpg");
+	}
+
+	&_6:before {
+		background-image: url("../../../assets/images/ChooseTour/card tour photo-6.jpg");
+	}
+
+	@include breakpoint(medium) {
+		height: 531px;
+		padding: 50px;
+		border-radius: 50px;
+
+        &:nth-last-child(2) {
+			margin-bottom: 0;
+		}
+	}
+
+	@include breakpoint(large) {
+        margin-bottom: 0;
+
+		&:before {
+			transform: scale(1);
+			transition: {
+				duration: 300ms;
+				timing-function: ease;
+				property: transform;
+			}
+		}
+
+		&:hover:before {
+			transform: scale(1.2);
+		}
+	}
+}
+
+
+.heading {
+	@include mob-h3;
+
+    margin-bottom: 15px;
+	color: $white;
+
+	@include breakpoint(medium) {
+		@include h3;
+	}
+
+    @include breakpoint(large) {
+		margin-right: 30px;
+	}
+}
+
+
+.price {
+	@include mob-p-small;
+
+	color: $white;
+	text-transform: lowercase;
+
+	@include breakpoint(medium) {
+		@include p-small;
+	}
+}
+
+
+.btn {
+	@extend %btn-more;
+}
+
+
+.btnContent {
+	@extend %btn-more-content;
+	@include btn-more-content-state(chooseTour);
+
+	left: 25px;
+	bottom: 25px;
+
+	&:after {
+		background-image: url("../../../assets/icons/arrow bt.svg");
+	}
+
+	@include breakpoint(medium) {
+		left: 50px;
+		bottom: 50px;
+	}
+
+	@include breakpoint(large) {
+
+		.item:hover & {
+			left: 30px;
+			bottom: 43px;
+		}
+		
+		.item:active & {
+			left: 30px;
+			bottom: 43px;
+		}
+	}
+}

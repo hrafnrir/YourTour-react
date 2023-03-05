@@ -1,0 +1,32 @@
+%container-m {
+	min-width: 318px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: content-box;
+	@include breakpoint(medium) {
+		max-width: 918px;
+	}
+	@include breakpoint(large) {
+		max-width: 1170px;
+	}
+}
+
+%container-l {
+	min-width: 318px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: content-box;
+	@include breakpoint(medium) {
+		max-width: 984px;
+	}
+	@include breakpoint(large) {
+		max-width: 1860px;
+	}
+}
+
+%block {
+	margin-top: 75px;
+	@include breakpoint(medium) {
+		margin-top: 135px;
+	}
+}

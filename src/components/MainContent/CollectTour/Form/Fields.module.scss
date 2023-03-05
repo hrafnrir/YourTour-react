@@ -1,0 +1,141 @@
+@import "../../../../styles/general";
+
+
+.mainWrapper {
+	@include breakpoint(medium) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 20px;
+	}
+
+	@include breakpoint(large) {
+		grid-column-gap: 30px;
+	}
+}
+
+
+.container {
+	margin-bottom: 30px;
+
+	@include breakpoint(medium) {
+		margin-bottom: 32px;
+	}
+}
+
+
+.commentContainer {
+	@include breakpoint(medium) {
+		grid-column: 1/3;
+	}
+}
+
+
+.label {
+	display: block;
+	width: 100%;
+	color: $black;
+	margin-bottom: 8px;
+
+	@include breakpoint(large) {
+		&:hover + .field {
+			background-color: $biege-100;
+		}
+	}
+}
+
+
+.field {
+	@include mob-p-normal;
+
+	width: 100%;
+	height: 43px;
+	padding: 9px;
+	background-color: $biege-100;
+	border: 1px solid $biege-200;
+	border-radius: 10px;
+
+	@include breakpoint(large) {
+		&:hover {
+			background-color: $biege-200;
+		}
+	}
+
+	&:focus {
+		color: $black;
+		background-color: $biege-200 !important;
+		border-color: $gray-300;
+
+		&::placeholder {
+			opacity: 0;
+		}
+	}
+    
+	&::placeholder {
+
+		color: $gray-300;
+	}
+
+	@include breakpoint(medium) {
+		@include p-normal;
+		padding: 18px 20px;
+		height: 68px;
+	}
+}
+
+
+.select {
+	height: 46px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	background: {
+		image: url("../../../../assets/icons/ic-dropdown.svg");
+		repeat: no-repeat;
+		size: 26px;
+		position: right 9px center;
+	}
+
+	@include breakpoint(medium) {
+		background-position: right 20px center;
+		height: 68px;
+	}
+
+	@include breakpoint(large) {
+		cursor: pointer;
+	}
+
+	&:not(:focus) {
+		color: $black;		
+	}
+
+	&:invalid:not(:focus) {
+		color: $gray-300;		
+	}
+
+	&:invalid:focus {
+		color: $black;		
+	}
+
+	&:focus {
+		color: $black;
+	}
+
+	&:focus .option {
+		color: $black;
+	}
+}
+
+
+.date {
+	text-transform: uppercase;
+}
+
+
+.comment {
+	height: 132px;
+	vertical-align: top;
+
+	@include breakpoint(medium) {
+		height: 152px;
+	}
+}
