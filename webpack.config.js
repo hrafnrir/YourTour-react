@@ -41,7 +41,7 @@ const plugins = [
         patterns: [
             { 
                 from: path.resolve(__dirname, 'src/favicon.ico'), 
-                to: path.resolve(__dirname, 'dist')
+                to: path.resolve(__dirname, 'public')
             }
         ]
     }),
@@ -74,7 +74,7 @@ module.exports = {
     },
     output: {
         filename: 'bundle.[contenthash].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'public')
     },
     optimization: optimization(),
     target: isDev ? "web" : "browserslist",

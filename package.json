@@ -1,5 +1,5 @@
 {
-  "homepage": "http://hrafnrir.github.io/YourTour-react-app",
+  "homepage": "https://hrafnrir.github.io/YourTour-react",
   "name": "your-tour-react-app",
   "version": "1.0.0",
   "private": "true",
@@ -8,8 +8,8 @@
     "build": "cross-env NODE_ENV=production webpack",
     "watch": "webpack --watch",
     "start": "cross-env SERVE=true webpack serve",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
