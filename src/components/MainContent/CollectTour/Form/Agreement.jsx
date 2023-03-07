@@ -18,13 +18,13 @@ export default class Agreement extends React.Component {
                 <input className={styles.checkbox} 
                        checked={this.props.agreement} 
                        onChange={this.handleChange} 
-                       type="checkbox" 
-                       name="agreement" 
-                       id="agreement-field" 
+                       type='checkbox' 
+                       name='agreement' 
+                       id='agreement-field' 
                        required />
-                <label className={styles.label} htmlFor="agreement-field"></label>
+                <label className={styles.label} htmlFor='agreement-field'></label>
                 <span className={styles.terms}>{'Нажимая кнопку, я принимаю условия '}
-                    <a className={styles.terms__link} href="#">Лицензионного договора</a>
+                    <a className={styles.terms__link} href={this.props.licenseLink}>Лицензионного договора</a>
                 </span>
             </div>
         )

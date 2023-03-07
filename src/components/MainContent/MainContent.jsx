@@ -5,14 +5,14 @@ import Review from './Review/Review.jsx';
 import Gallery from './Gallery/Gallery.jsx';
 import Story from './Story/Story.jsx';
 
-const MainContent = () => {
+const MainContent = (props) => {
     return (
         <main>
-            <ChooseTour />
-            <CollectTour />
-            <Review />
-            <Gallery />
-            <Story />
+            <ChooseTour data={props.data.chooseTour}/>
+            <CollectTour data={props.data.collectTour}/>
+            <Review data={props.data.review}/>
+            <Gallery data={props.data.gallery}/>
+            <Story data={props.data.story}/>
         </main>
     )
 }

@@ -63,7 +63,7 @@ export default class Form extends React.Component {
                   onSubmit={this.handleSubmit}
                   onReset={this.handleReset}
                   method='POST'>
-                <Fields
+                <Fields options={this.props.data.selectOptions}
                     name={this.state.name}
                     trip={this.state.trip.value}
                     email={this.state.email}
@@ -77,7 +77,7 @@ export default class Form extends React.Component {
                     age={this.state.age}
                     onAgeChange={this.handleChange}
                 />
-                <Agreement
+                <Agreement licenseLink={this.props.data.licenseAgreementLink}
                     agreement={this.state.agreement}
                     onAgreementChange={this.handleChange}
                 />

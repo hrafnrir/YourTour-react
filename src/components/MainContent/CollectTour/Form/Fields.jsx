@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import InputMask from 'react-input-mask';
 import styles from './Fields.module.scss';
 
-const options = [ 
-    { value: 'mountains-trip', name: 'Путешествие в горы' }, 
-    { value: 'bike-trip', name: 'Велопрогулка' },
-    { value: 'rafting-trip', name: 'Сплав' }
-]
-
-const phoneMask = '+ 7 (999) 999 99 99';
-const dateMask = '99.99.9999';
-
 export default class Fields extends React.Component {
     constructor(props) {
         super(props);
@@ -23,7 +14,10 @@ export default class Fields extends React.Component {
     }
 
     render() {
-        const optionsElements = options.map((item, index) => 
+        const phoneMask = '+ 7 (999) 999 99 99';
+        const dateMask = '99.99.9999';
+
+        const optionsElements = this.props.options.map((item, index) => 
             <option key={index.toString()} 
                     className={styles.option} 
                     value={item.value}>{item.name}</option>);

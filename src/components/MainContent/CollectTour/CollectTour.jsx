@@ -3,15 +3,12 @@ import SectionHeader from '../SectionHeader/SectionHeader.jsx';
 import Form from './Form/Form.jsx';
 import styles from './../SectionWrapper.module.scss';
 
-const heading = 'Собери свой тур';
-const description = 'Идейные соображения высшего порядка, а также рамки и место обучения кадров';
-
-const CollectTour = () => {
+const CollectTour = (props) => {
     return (
         <section className={styles.mainWrapper}>
             <div className={styles.container_medium}>
-                <SectionHeader heading={heading} description={description} menu={false} />
-                <Form />
+                <SectionHeader heading={props.data.heading} description={props.data.description} menu={false} />
+                <Form data={props.data.form}/>
             </div>
         </section>
     )

@@ -3,15 +3,12 @@ import SectionHeader from '../SectionHeader/SectionHeader.jsx';
 import ReviewGroup from './ReviewGroup.jsx';
 import styles from './../SectionWrapper.module.scss';
 
-const heading = 'Отзывы наших путешественников';
-const description = 'Идейные соображения высшего порядка, а также рамки и место обучения кадров';
-
-const Review = () => {
+const Review = (props) => {
     return (
         <section className={styles.mainWrapper}>
             <div className={styles.container_medium}>
-                <SectionHeader heading={heading} description={description} menu={false} />
-                <ReviewGroup />
+                <SectionHeader heading={props.data.heading} description={props.data.description} menu={false} />
+                <ReviewGroup reviewItems={props.data.reviewItems}/>
             </div>
         </section>
     )

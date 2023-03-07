@@ -3,22 +3,12 @@ import SectionHeader from './../SectionHeader/SectionHeader.jsx';
 import TourGroup from './TourGroup.jsx';
 import styles from './../SectionWrapper.module.scss';
 
-const sectionHeading = 'Выбери свой тур';
-
-const menuItems = [
-    { value: 'Популярные', link: '#' },
-    { value: 'Авторские', link: '#' },
-    { value: 'Походы', link: '#' },
-    { value: 'Сплавы', link: '#' },
-    { value: 'Велопрогулки', link: '#' },
-];
-
-const ChooseTour = () => {
+const ChooseTour = (props) => {
     return (
         <section className={styles.mainWrapper}>
             <div className={styles.container_medium}>
-                <SectionHeader heading={sectionHeading} description={false} menu={menuItems} />
-                <TourGroup />
+                <SectionHeader heading={props.data.heading} description={false} menu={props.data.menuItems} />
+                <TourGroup tourItems={props.data.tourItems}/>
             </div>
         </section>
     )

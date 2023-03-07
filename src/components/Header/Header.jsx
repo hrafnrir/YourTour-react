@@ -25,10 +25,10 @@ export default class Header extends React.Component {
     handleScroll(event) {
         event.preventDefault();
 
-        if (scrollY >= 451 && this.state.header === 'unfixed') {
+        if (scrollY > 450 && this.state.header === 'unfixed') {
             this.setState({ header: 'fixed',
                             slider: 'slideDown' });
-        } else if (scrollY <= 451 && this.state.header === 'fixed') {
+        } else if (scrollY < 450 && this.state.header === 'fixed') {
             this.setState({ slider: 'slideUp' });
             setTimeout(() => this.setState({ header: 'unfixed' }), 600)
         }
@@ -37,9 +37,9 @@ export default class Header extends React.Component {
     render() {
         return (
             <header className={styles.mainWrapper}>
-                { this.state.header === 'fixed' && <HeaderTop headerType='fixed' slider={this.state.slider} /> }
-                <HeaderTop headerType='unfixed'/>
-                <HeaderBottom />
+                { this.state.header === 'fixed' && <HeaderTop data={this.props.data.headerTop} headerType='fixed' slider={this.state.slider} /> }
+                <HeaderTop data={this.props.data.headerTop} headerType='unfixed'/>
+                <HeaderBottom data={this.props.data.headerBottom}/>
             </header>
         )
     }

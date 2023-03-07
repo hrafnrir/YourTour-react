@@ -3,15 +3,12 @@ import SectionHeader from '../SectionHeader/SectionHeader.jsx';
 import PhotoGroup from './PhotoGroup.jsx';
 import styles from './../SectionWrapper.module.scss';
 
-const heading = 'Фотографии путешествий';
-const description = 'Идейные соображения высшего порядка, а также рамки и место обучения кадров';
-
-const Gallery = () => {
+const Gallery = (props) => {
     return (
         <section className={styles.mainWrapper}>
             <div className={styles.container_large}>
-                <SectionHeader heading={heading} description={description} menu={false} />
-                <PhotoGroup />
+                <SectionHeader heading={props.data.heading} description={props.data.description} menu={false} />
+                <PhotoGroup photoItems={props.data.photoItems}/>
             </div>
         </section>
     )
