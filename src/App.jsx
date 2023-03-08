@@ -3,16 +3,15 @@ import Header from './components/Header/Header.jsx';
 import MainContent from './components/MainContent/MainContent.jsx';
 import CallToAction from './components/CallToAction/CallToAction.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import data from './storage/dataStore.js';
 import styles from './App.module.scss';
 
-const App = () => {
+const App = (props) => {
     return (
         <>
-            <Header data={data.header}/>
-            <MainContent data={data.mainContent}/>
-            <CallToAction data={data.callToAction}/>
-            <Footer data={data.footer}/>
+            <Header data={props.data.header}/>
+            <MainContent data={props.data.mainContent}/>
+            <CallToAction data={props.data.callToAction}/>
+            <Footer data={props.data.footer}/>
         </>
     )
 }
