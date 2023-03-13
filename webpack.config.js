@@ -55,7 +55,10 @@ if (process.env.SERVE) {
 
 const options = (ext) => {
   const config = {
-    presets: ["@babel/preset-env", "@babel/preset-react"],
+    presets: [
+      "@babel/preset-env",
+      ["@babel/preset-react", { runtime: "automatic" }],
+    ],
     cacheDirectory: true,
   };
 
