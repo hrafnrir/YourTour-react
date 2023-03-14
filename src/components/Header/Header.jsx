@@ -4,31 +4,31 @@ import HeaderBottom from "./HeaderBottom/HeaderBottom.jsx";
 import styles from "./Header.module.scss";
 
 const Header = (props) => {
-  const [header, setHeader] = useState("unfixed");
-  const [slider, setSlider] = useState("slideUp");
+  const [headerFixed, setHeaderFixed] = useState(false);
+  const [sliderDown, setSliderDown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (scrollY > 450 && header === "unfixed") {
-        setHeader("fixed");
-        setSlider("slideDown");
-      } else if (scrollY < 450 && header === "fixed") {
-        setSlider("slideUp");
-        setTimeout(() => setHeader("unfixed"), 600);
+      if (scrollY > 450 && !headerFixed) {
+        setHeaderFixed(true);
+        setSliderDown(true);
+      } else if (scrollY < 450 && headerFixed) {
+        setSliderDown(false);
+        setTimeout(() => setHeaderFixed(false), 600);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [header]);
+  }, [headerFixed]);
 
   return (
     <header className={styles.mainWrapper}>
-      {header === "fixed" && (
+      {headerFixed && (
         <HeaderTop
           data={props.data.headerTop}
           headerType="fixed"
-          slider={slider}
+          sliderDown={sliderDown}
         />
       )}
       <HeaderTop data={props.data.headerTop} headerType="unfixed" />

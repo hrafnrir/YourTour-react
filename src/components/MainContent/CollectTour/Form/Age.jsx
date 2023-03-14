@@ -3,17 +3,13 @@ import styles from "./Age.module.scss";
 const Age = (props) => {
   const check = props.age === "yes" ? true : false;
 
-  const handleChange = (event) => {
-    props.onAgeChange(event.target);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.label}>Вам есть 18 лет?</div>
       <input
         className={styles.radio}
         checked={check}
-        onChange={handleChange}
+        onChange={(e) => props.onAgeChange(e.target)}
         type="radio"
         name="age"
         value="yes"
@@ -26,7 +22,7 @@ const Age = (props) => {
       <input
         className={styles.radio}
         checked={!check}
-        onChange={handleChange}
+        onChange={(e) => props.onAgeChange(e.target)}
         type="radio"
         name="age"
         value="no"

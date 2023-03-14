@@ -5,47 +5,15 @@ import Agreement from "./Agreement.jsx";
 import styles from "./Form.module.scss";
 
 const Form = (props) => {
-  const [name, setName] = useState("");
-  const [trip, setTrip] = useState({ value: "" });
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [dateFrom, setDateFrom] = useState("");
-  const [dateBefore, setDateBefore] = useState("");
-  const [comment, setComment] = useState("");
-  const [age, setAge] = useState("yes");
-  const [agreement, setAgreement] = useState(false);
+  const [values, setValues] = useState(props.data.initialState);
 
   const handleChange = (element) => {
     const name = element.name;
 
-    switch (name) {
-      case "name":
-        setName(element.value);
-        break;
-      case "trip":
-        setTrip({ value: element.value });
-        break;
-      case "email":
-        setEmail(element.value);
-        break;
-      case "phone":
-        setPhone(element.value);
-        break;
-      case "dateFrom":
-        setDateFrom(element.value);
-        break;
-      case "dateBefore":
-        setDateBefore(element.value);
-        break;
-      case "comment":
-        setComment(element.value);
-        break;
-      case "age":
-        setAge(element.value);
-        break;
-      case "agreement":
-        setAgreement(element.checked);
-        break;
+    if (element.type === "checkbox") {
+      setValues((prevState) => ({ ...prevState, [name]: element.checked }));
+    } else {
+      setValues((prevState) => ({ ...prevState, [name]: element.value }));
     }
   };
 
@@ -55,15 +23,7 @@ const Form = (props) => {
 
   const handleReset = (event) => {
     event.preventDefault();
-    setName("");
-    setTrip({ value: "" });
-    setEmail("");
-    setPhone("");
-    setDateFrom("");
-    setDateBefore("");
-    setComment("");
-    setAge("yes");
-    setAgreement(false);
+    setValues(props.data.initialState);
   };
 
   return (
@@ -75,19 +35,19 @@ const Form = (props) => {
     >
       <Fields
         options={props.data.selectOptions}
-        name={name}
-        trip={trip.value}
-        email={email}
-        phone={phone}
-        dateFrom={dateFrom}
-        dateBefore={dateBefore}
-        comment={comment}
+        name={values.name}
+        trip={values.trip}
+        email={values.email}
+        phone={values.phone}
+        dateFrom={values.dateFrom}
+        dateBefore={values.dateBefore}
+        comment={values.comment}
         onFieldChange={handleChange}
       />
-      <Age age={age} onAgeChange={handleChange} />
+      <Age age={values.age} onAgeChange={handleChange} />
       <Agreement
         licenseLink={props.data.licenseAgreementLink}
-        agreement={agreement}
+        agreement={values.agreement}
         onAgreementChange={handleChange}
       />
       <input className={styles.btnSubmit} type="submit" value="Найти тур" />

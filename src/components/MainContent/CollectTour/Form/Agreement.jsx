@@ -1,16 +1,12 @@
 import styles from "./Agreement.module.scss";
 
 const Agreement = (props) => {
-  const handleChange = (event) => {
-    props.onAgreementChange(event.target);
-  };
-
   return (
     <div className={styles.container}>
       <input
         className={styles.checkbox}
         checked={props.agreement}
-        onChange={handleChange}
+        onChange={(e) => props.onAgreementChange(e.target)}
         type="checkbox"
         name="agreement"
         id="agreement-field"
