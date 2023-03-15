@@ -15,7 +15,7 @@ const HeaderTop = (props) => {
     props.headerType === "fixed"
       ? styles["container_fixedHeader"] +
         " " +
-        styles["container_" + props.slider]
+        styles["container_" + (props.sliderDown ? "slideDown" : "slideUp")]
       : "";
 
   return (
