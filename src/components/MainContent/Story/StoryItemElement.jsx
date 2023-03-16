@@ -17,7 +17,7 @@ const StoryItemElement = ({
       {list && (
         <ul className={s.list}>
           {list.map((item, index) => (
-            <li key={index.toString()}>{item}</li>
+            <li key={index}>{item}</li>
           ))}
         </ul>
       )}
@@ -28,11 +28,7 @@ const StoryItemElement = ({
       <div className={s.socialNetworks}>
         {socialNetworks &&
           socialNetworks.map((item, index) => (
-            <a
-              className={s.socialNetworks__item}
-              key={index.toString()}
-              href={item.link}
-            >
+            <a className={s.socialNetworks__item} key={index} href={item.link}>
               {item.name}
             </a>
           ))}

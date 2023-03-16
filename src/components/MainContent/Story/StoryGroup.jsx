@@ -4,7 +4,7 @@ import s from "./StoryGroup.module.scss";
 const StoryGroup = ({ storyItems }) => {
   const storyItemsElements = storyItems.map((item, index) => (
     <StoryItemElement
-      key={index.toString()}
+      key={index}
       heading={item.heading}
       description={item.description}
       list={item.list}

@@ -4,7 +4,7 @@ import s from "./PhotoGroup.module.scss";
 const PhotoGroup = ({ photoItems }) => {
   const photoItemsElements = photoItems.map((item, index) => (
     <PhotoItemElement
-      key={index.toString()}
+      key={index}
       device={item.device}
       photo={item.photo}
       alt={item.alt}

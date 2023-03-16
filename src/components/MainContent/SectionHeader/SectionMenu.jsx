@@ -4,7 +4,7 @@ import s from "./SectionMenu.module.scss";
 const SectionMenu = ({ menuItems }) => {
   const menuItemsElements = menuItems.map((item, index) => (
     <MenuItemElement
-      key={index.toString()}
+      key={index}
       value={item.item}
       link={item.link}
       num={index}

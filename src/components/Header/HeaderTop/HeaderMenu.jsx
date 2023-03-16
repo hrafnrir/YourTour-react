@@ -4,7 +4,7 @@ import s from "./HeaderMenu.module.scss";
 const HeaderMenu = ({ menuItems, isHeaderFixed }) => {
   const menuItemsElements = menuItems.map((item, index) => (
     <MenuItemElement
-      key={index.toString()}
+      key={index}
       value={item.item}
       link={item.link}
       isHeaderFixed={isHeaderFixed}

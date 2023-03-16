@@ -17,7 +17,7 @@ const Fields = ({
   const dateMask = "99.99.9999";
 
   const optionsElements = options.map((item, index) => (
-    <option key={index.toString()} className={s.option} value={item.value}>
+    <option key={index} className={s.option} value={item.value}>
       {item.name}
     </option>
   ));

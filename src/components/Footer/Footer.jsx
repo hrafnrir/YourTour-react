@@ -8,7 +8,7 @@ const Footer = ({ data: { socialNetworks } }) => {
         s.socialNetworks__item,
         s[`socialNetworks__item_${item.class}`]
       )}
-      key={index.toString()}
+      key={index}
       href={item.link}
     >
       <span className={s.socialNetworks__name}>{item.name}</span>

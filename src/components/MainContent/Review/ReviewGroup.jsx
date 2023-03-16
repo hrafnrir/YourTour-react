@@ -4,7 +4,7 @@ import s from "./ReviewGroup.module.scss";
 const ReviewGroup = ({ reviewItems }) => {
   const reviewItemsElements = reviewItems.map((item, index) => (
     <ReviewItemElement
-      key={index.toString()}
+      key={index}
       name={item.name}
       tour={item.tour}
       review={item.review}
