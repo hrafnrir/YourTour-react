@@ -10,7 +10,7 @@ const StoryItemElement = ({
   num,
 }) => {
   return (
-    <article className={cn(s.item, s["item_" + num])}>
+    <article className={cn(s.item, s[`item_${num}`])}>
       <h3 className={s.heading}>{heading}</h3>
       <p className={s.description}>{description}</p>
 

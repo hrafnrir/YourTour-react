@@ -6,7 +6,7 @@ const Footer = ({ data: { socialNetworks } }) => {
     <a
       className={cn(
         s.socialNetworks__item,
-        s["socialNetworks__item_" + item.class]
+        s[`socialNetworks__item_${item.class}`]
       )}
       key={index.toString()}
       href={item.link}

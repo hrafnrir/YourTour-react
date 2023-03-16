@@ -5,7 +5,7 @@ import s from "./HeaderTop.module.scss";
 
 const HeaderTop = ({ data: { tel, menuItems }, headerType, sliderDown }) => {
   const phone = tel;
-  const phoneHref = "tel:" + phone;
+  const phoneHref = `tel:${phone}`;
   const correctPhoneNumber = phone
     .toString()
     .replace(/(8)(\d{3})(\d{3})(\d{2})(\d{2})/g, "+7 $2 $3 $4 $5");
