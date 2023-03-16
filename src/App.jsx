@@ -4,13 +4,13 @@ import MainContent from "./components/MainContent/MainContent.jsx";
 import CallToAction from "./components/CallToAction/CallToAction.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
-const App = (props) => {
+const App = ({ data: { header, mainContent, callToAction, footer } }) => {
   return (
     <Fragment>
-      <Header data={props.data.header} />
-      <MainContent data={props.data.mainContent} />
-      <CallToAction data={props.data.callToAction} />
-      <Footer data={props.data.footer} />
+      <Header data={header} />
+      <MainContent data={mainContent} />
+      <CallToAction data={callToAction} />
+      <Footer data={footer} />
     </Fragment>
   );
 };

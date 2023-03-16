@@ -1,7 +1,7 @@
 import s from "./Age.module.scss";
 
-const Age = (props) => {
-  const check = props.age === "yes" ? true : false;
+const Age = ({ age, onAgeChange }) => {
+  const check = age === "yes" ? true : false;
 
   return (
     <div className={s.container}>
@@ -9,7 +9,7 @@ const Age = (props) => {
       <input
         className={s.radio}
         checked={check}
-        onChange={(e) => props.onAgeChange(e.target)}
+        onChange={(e) => onAgeChange(e.target)}
         type="radio"
         name="age"
         value="yes"
@@ -22,7 +22,7 @@ const Age = (props) => {
       <input
         className={s.radio}
         checked={!check}
-        onChange={(e) => props.onAgeChange(e.target)}
+        onChange={(e) => onAgeChange(e.target)}
         type="radio"
         name="age"
         value="no"

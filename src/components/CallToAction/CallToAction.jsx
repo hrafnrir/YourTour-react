@@ -1,20 +1,22 @@
 import s from "./CallToAction.module.scss";
 
-const CallToAction = (props) => {
+const CallToAction = ({
+  data: {
+    heading,
+    img: { photo, alt },
+    email: { email, link },
+  },
+}) => {
   return (
     <aside className={s.mainWrapper}>
       <div className={s.container}>
-        <img
-          className={s.img}
-          src={props.data.img.photo}
-          alt={props.data.img.alt}
-        />
+        <img className={s.img} src={photo} alt={alt} />
         <div>
-          <h3 className={s.heading}>{props.data.heading}</h3>
+          <h3 className={s.heading}>{heading}</h3>
           <p className={s.description}>
             {"Напиши на почту и узнай подробности на "}
-            <a className={s.link} href={props.data.email.link}>
-              {props.data.email.email}
+            <a className={s.link} href={link}>
+              {email}
             </a>
           </p>
         </div>

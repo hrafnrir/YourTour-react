@@ -4,8 +4,10 @@ import Age from "./Age.jsx";
 import Agreement from "./Agreement.jsx";
 import s from "./Form.module.scss";
 
-const Form = (props) => {
-  const [values, setValues] = useState(props.data.initialState);
+const Form = ({
+  data: { initialState, selectOptions, licenseAgreementLink },
+}) => {
+  const [values, setValues] = useState(initialState);
 
   const handleChange = (element) => {
     const name = element.name;
@@ -23,7 +25,7 @@ const Form = (props) => {
 
   const handleReset = (event) => {
     event.preventDefault();
-    setValues(props.data.initialState);
+    setValues(initialState);
   };
 
   return (
@@ -34,7 +36,7 @@ const Form = (props) => {
       method="POST"
     >
       <Fields
-        options={props.data.selectOptions}
+        options={selectOptions}
         name={values.name}
         trip={values.trip}
         email={values.email}
@@ -46,7 +48,7 @@ const Form = (props) => {
       />
       <Age age={values.age} onAgeChange={handleChange} />
       <Agreement
-        licenseLink={props.data.licenseAgreementLink}
+        licenseLink={licenseAgreementLink}
         agreement={values.agreement}
         onAgreementChange={handleChange}
       />

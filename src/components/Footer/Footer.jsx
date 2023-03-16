@@ -1,19 +1,17 @@
 import s from "./Footer.module.scss";
 
-const Footer = (props) => {
-  const socialNetworksElements = props.data.socialNetworks.map(
-    (item, index) => (
-      <a
-        className={
-          s.socialNetworks__item + " " + s["socialNetworks__item_" + item.class]
-        }
-        key={index.toString()}
-        href={item.link}
-      >
-        <span className={s.socialNetworks__name}>{item.name}</span>
-      </a>
-    )
-  );
+const Footer = ({ data: { socialNetworks } }) => {
+  const socialNetworksElements = socialNetworks.map((item, index) => (
+    <a
+      className={
+        s.socialNetworks__item + " " + s["socialNetworks__item_" + item.class]
+      }
+      key={index.toString()}
+      href={item.link}
+    >
+      <span className={s.socialNetworks__name}>{item.name}</span>
+    </a>
+  ));
 
   return (
     <footer className={s.mainWrapper}>

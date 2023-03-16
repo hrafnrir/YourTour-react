@@ -3,7 +3,7 @@ import HeaderTop from "./HeaderTop/HeaderTop.jsx";
 import HeaderBottom from "./HeaderBottom/HeaderBottom.jsx";
 import s from "./Header.module.scss";
 
-const Header = (props) => {
+const Header = ({ data: { headerTop, headerBottom } }) => {
   const [headerFixed, setHeaderFixed] = useState(false);
   const [sliderDown, setSliderDown] = useState(false);
 
@@ -26,13 +26,13 @@ const Header = (props) => {
     <header className={s.mainWrapper}>
       {headerFixed && (
         <HeaderTop
-          data={props.data.headerTop}
+          data={headerTop}
           headerType="fixed"
           sliderDown={sliderDown}
         />
       )}
-      <HeaderTop data={props.data.headerTop} headerType="unfixed" />
-      <HeaderBottom data={props.data.headerBottom} />
+      <HeaderTop data={headerTop} headerType="unfixed" />
+      <HeaderBottom data={headerBottom} />
     </header>
   );
 };

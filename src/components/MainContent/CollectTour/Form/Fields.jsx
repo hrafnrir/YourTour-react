@@ -1,11 +1,21 @@
 import InputMask from "react-input-mask";
 import s from "./Fields.module.scss";
 
-const Fields = (props) => {
+const Fields = ({
+  options,
+  name,
+  trip,
+  email,
+  phone,
+  dateFrom,
+  dateBefore,
+  comment,
+  onFieldChange,
+}) => {
   const phoneMask = "+ 7 (999) 999 99 99";
   const dateMask = "99.99.9999";
 
-  const optionsElements = props.options.map((item, index) => (
+  const optionsElements = options.map((item, index) => (
     <option key={index.toString()} className={s.option} value={item.value}>
       {item.name}
     </option>
@@ -19,8 +29,8 @@ const Fields = (props) => {
         </label>
         <input
           className={s.field}
-          value={props.name}
-          onChange={(e) => props.onFieldChange(e.target)}
+          value={name}
+          onChange={(e) => onFieldChange(e.target)}
           type="text"
           name="name"
           id="name-field"
@@ -34,8 +44,8 @@ const Fields = (props) => {
         </label>
         <select
           className={s.field + " " + s.select}
-          value={props.trip}
-          onChange={(e) => props.onFieldChange(e.target)}
+          value={trip}
+          onChange={(e) => onFieldChange(e.target)}
           name="trip"
           id="trip-field"
           required
@@ -52,8 +62,8 @@ const Fields = (props) => {
         </label>
         <input
           className={s.field}
-          value={props.email}
-          onChange={(e) => props.onFieldChange(e.target)}
+          value={email}
+          onChange={(e) => onFieldChange(e.target)}
           type="email"
           name="email"
           id="email-field"
@@ -67,8 +77,8 @@ const Fields = (props) => {
         </label>
         <InputMask
           className={s.field}
-          value={props.phone}
-          onChange={(e) => props.onFieldChange(e.target)}
+          value={phone}
+          onChange={(e) => onFieldChange(e.target)}
           mask={phoneMask}
           maskChar=""
           type="tel"
@@ -84,8 +94,8 @@ const Fields = (props) => {
         </label>
         <InputMask
           className={s.field + " " + s.date}
-          value={props.dateFrom}
-          onChange={(e) => props.onFieldChange(e.target)}
+          value={dateFrom}
+          onChange={(e) => onFieldChange(e.target)}
           mask={dateMask}
           maskChar=""
           type="text"
@@ -101,8 +111,8 @@ const Fields = (props) => {
         </label>
         <InputMask
           className={s.field + " " + s.date}
-          value={props.dateBefore}
-          onChange={(e) => props.onFieldChange(e.target)}
+          value={dateBefore}
+          onChange={(e) => onFieldChange(e.target)}
           mask={dateMask}
           maskChar=""
           type="text"
@@ -118,8 +128,8 @@ const Fields = (props) => {
         </label>
         <textarea
           className={s.field + " " + s.comment}
-          value={props.comment}
-          onChange={(e) => props.onFieldChange(e.target)}
+          value={comment}
+          onChange={(e) => onFieldChange(e.target)}
           name="comment"
           id="comment-field"
         ></textarea>

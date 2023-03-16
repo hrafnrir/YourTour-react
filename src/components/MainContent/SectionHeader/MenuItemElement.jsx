@@ -1,11 +1,11 @@
 import s from "./MenuItemElement.module.scss";
 
-const MenuItemElement = (props) => {
-  const linkClass = !props.num ? s.link + " " + s.link_selected : s.link;
+const MenuItemElement = ({ value, link, num }) => {
+  const linkClass = !num ? s.link + " " + s.link_selected : s.link;
   return (
     <li className={s.item}>
-      <a className={linkClass} href={props.link}>
-        {props.value}
+      <a className={linkClass} href={link}>
+        {value}
       </a>
     </li>
   );

@@ -1,8 +1,8 @@
 import PhotoItemElement from "./PhotoItemElement.jsx";
 import s from "./PhotoGroup.module.scss";
 
-const PhotoGroup = (props) => {
-  const photoItemsElements = props.photoItems.map((item, index) => (
+const PhotoGroup = ({ photoItems }) => {
+  const photoItemsElements = photoItems.map((item, index) => (
     <PhotoItemElement
       key={index.toString()}
       device={item.device}

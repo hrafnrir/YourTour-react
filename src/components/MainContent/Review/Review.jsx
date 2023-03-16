@@ -2,16 +2,16 @@ import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 import ReviewGroup from "./ReviewGroup.jsx";
 import s from "./../SectionWrapper.module.scss";
 
-const Review = (props) => {
+const Review = ({ data: { heading, description, reviewItems } }) => {
   return (
     <section className={s.mainWrapper}>
       <div className={s.container_medium}>
         <SectionHeader
-          heading={props.data.heading}
-          description={props.data.description}
+          heading={heading}
+          description={description}
           menu={false}
         />
-        <ReviewGroup reviewItems={props.data.reviewItems} />
+        <ReviewGroup reviewItems={reviewItems} />
       </div>
     </section>
   );

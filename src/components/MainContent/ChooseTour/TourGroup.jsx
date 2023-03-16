@@ -1,8 +1,8 @@
 import TourItemElement from "./TourItemElement.jsx";
 import s from "./TourGroup.module.scss";
 
-const TourGroup = (props) => {
-  const tourItemsElements = props.tourItems.map((item, index) => (
+const TourGroup = ({ tourItems }) => {
+  const tourItemsElements = tourItems.map((item, index) => (
     <TourItemElement
       key={index.toString()}
       heading={item.heading}

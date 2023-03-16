@@ -1,8 +1,8 @@
 import MenuItemElement from "./MenuItemElement.jsx";
 import s from "./SectionMenu.module.scss";
 
-const SectionMenu = (props) => {
-  const menuItemsElements = props.menuItems.map((item, index) => (
+const SectionMenu = ({ menuItems }) => {
+  const menuItemsElements = menuItems.map((item, index) => (
     <MenuItemElement
       key={index.toString()}
       value={item.item}

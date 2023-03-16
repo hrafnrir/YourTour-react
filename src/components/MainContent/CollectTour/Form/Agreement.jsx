@@ -1,12 +1,12 @@
 import s from "./Agreement.module.scss";
 
-const Agreement = (props) => {
+const Agreement = ({ licenseLink, agreement, onAgreementChange }) => {
   return (
     <div className={s.container}>
       <input
         className={s.checkbox}
-        checked={props.agreement}
-        onChange={(e) => props.onAgreementChange(e.target)}
+        checked={agreement}
+        onChange={(e) => onAgreementChange(e.target)}
         type="checkbox"
         name="agreement"
         id="agreement-field"
@@ -17,7 +17,7 @@ const Agreement = (props) => {
       </label>
       <span className={s.terms}>
         {"Нажимая кнопку, я принимаю условия "}
-        <a className={s.terms__link} href={props.licenseLink}>
+        <a className={s.terms__link} href={licenseLink}>
           Лицензионного договора
         </a>
       </span>
