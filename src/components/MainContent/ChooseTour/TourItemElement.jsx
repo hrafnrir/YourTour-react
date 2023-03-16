@@ -1,12 +1,12 @@
-import styles from "./TourItemElement.module.scss";
+import s from "./TourItemElement.module.scss";
 
 const TourItemElement = (props) => {
   return (
-    <article className={styles.item + " " + styles["item_" + props.num]}>
-      <h3 className={styles.heading}>{props.heading}</h3>
-      <p className={styles.price}>{props.price}</p>
-      <a className={styles.btn} href={props.link}>
-        <span className={styles.btnContent}>Подробнее</span>
+    <article className={s.item + " " + s["item_" + props.num]}>
+      <h3 className={s.heading}>{props.heading}</h3>
+      <p className={s.price}>{props.price}</p>
+      <a className={s.btn} href={props.link}>
+        <span className={s.btnContent}>Подробнее</span>
       </a>
     </article>
   );

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Fields from "./Fields.jsx";
 import Age from "./Age.jsx";
 import Agreement from "./Agreement.jsx";
-import styles from "./Form.module.scss";
+import s from "./Form.module.scss";
 
 const Form = (props) => {
   const [values, setValues] = useState(props.data.initialState);
@@ -28,7 +28,7 @@ const Form = (props) => {
 
   return (
     <form
-      className={styles.container}
+      className={s.container}
       onSubmit={handleSubmit}
       onReset={handleReset}
       method="POST"
@@ -50,8 +50,8 @@ const Form = (props) => {
         agreement={values.agreement}
         onAgreementChange={handleChange}
       />
-      <input className={styles.btnSubmit} type="submit" value="Найти тур" />
-      <input className={styles.btnReset} type="reset" value="Сбросить" />
+      <input className={s.btnSubmit} type="submit" value="Найти тур" />
+      <input className={s.btnReset} type="reset" value="Сбросить" />
     </form>
   );
 };

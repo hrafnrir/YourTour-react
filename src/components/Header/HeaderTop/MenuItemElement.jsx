@@ -1,10 +1,10 @@
-import styles from "./MenuItemElement.module.scss";
+import s from "./MenuItemElement.module.scss";
 
 const MenuItemElement = (props) => {
   return (
-    <li className={styles.item}>
+    <li className={s.item}>
       <a
-        className={styles.link + " " + styles["link_" + props.headerClass]}
+        className={s.link + " " + s["link_" + props.headerClass]}
         href={props.link}
       >
         {props.value}

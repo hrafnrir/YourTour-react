@@ -1,27 +1,27 @@
-import styles from "./StoryItemElement.module.scss";
+import s from "./StoryItemElement.module.scss";
 
 const StoryItemElement = (props) => {
   return (
-    <article className={styles.item + " " + styles["item_" + props.num]}>
-      <h3 className={styles.heading}>{props.heading}</h3>
-      <p className={styles.description}>{props.description}</p>
+    <article className={s.item + " " + s["item_" + props.num]}>
+      <h3 className={s.heading}>{props.heading}</h3>
+      <p className={s.description}>{props.description}</p>
 
       {props.list && (
-        <ul className={styles.list}>
+        <ul className={s.list}>
           {props.list.map((item, index) => (
             <li key={index.toString()}>{item}</li>
           ))}
         </ul>
       )}
 
-      <a className={styles.btn} href={props.link}>
-        <span className={styles.btnContent}>Подробнее</span>
+      <a className={s.btn} href={props.link}>
+        <span className={s.btnContent}>Подробнее</span>
       </a>
-      <div className={styles.socialNetworks}>
+      <div className={s.socialNetworks}>
         {props.socialNetworks &&
           props.socialNetworks.map((item, index) => (
             <a
-              className={styles.socialNetworks__item}
+              className={s.socialNetworks__item}
               key={index.toString()}
               href={item.link}
             >

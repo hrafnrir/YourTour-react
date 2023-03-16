@@ -1,27 +1,25 @@
-import styles from "./Footer.module.scss";
+import s from "./Footer.module.scss";
 
 const Footer = (props) => {
   const socialNetworksElements = props.data.socialNetworks.map(
     (item, index) => (
       <a
         className={
-          styles.socialNetworks__item +
-          " " +
-          styles["socialNetworks__item_" + item.class]
+          s.socialNetworks__item + " " + s["socialNetworks__item_" + item.class]
         }
         key={index.toString()}
         href={item.link}
       >
-        <span className={styles.socialNetworks__name}>{item.name}</span>
+        <span className={s.socialNetworks__name}>{item.name}</span>
       </a>
     )
   );
 
   return (
-    <footer className={styles.mainWrapper}>
-      <div className={styles.container}>
-        <p className={styles.description}>Наши социальные сети</p>
-        <div className={styles.socialNetworks}>{socialNetworksElements}</div>
+    <footer className={s.mainWrapper}>
+      <div className={s.container}>
+        <p className={s.description}>Наши социальные сети</p>
+        <div className={s.socialNetworks}>{socialNetworksElements}</div>
       </div>
     </footer>
   );

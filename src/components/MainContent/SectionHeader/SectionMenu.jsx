@@ -1,5 +1,5 @@
 import MenuItemElement from "./MenuItemElement.jsx";
-import styles from "./SectionMenu.module.scss";
+import s from "./SectionMenu.module.scss";
 
 const SectionMenu = (props) => {
   const menuItemsElements = props.menuItems.map((item, index) => (
@@ -11,8 +11,8 @@ const SectionMenu = (props) => {
     />
   ));
   return (
-    <nav className={styles.menu}>
-      <ul className={styles.list}>{menuItemsElements}</ul>
+    <nav className={s.menu}>
+      <ul className={s.list}>{menuItemsElements}</ul>
     </nav>
   );
 };

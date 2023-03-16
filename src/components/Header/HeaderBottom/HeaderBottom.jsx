@@ -1,12 +1,12 @@
-import styles from "./HeaderBottom.module.scss";
+import s from "./HeaderBottom.module.scss";
 
 const HeaderBottom = (props) => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.heading}>{props.data.heading}</h1>
-      <p className={styles.description}>{props.data.description}</p>
-      <div className={styles.containerBtn}>
-        <a className={styles.btn} href="/#">
+    <div className={s.container}>
+      <h1 className={s.heading}>{props.data.heading}</h1>
+      <p className={s.description}>{props.data.description}</p>
+      <div className={s.containerBtn}>
+        <a className={s.btn} href="/#">
           Найти тур
         </a>
       </div>

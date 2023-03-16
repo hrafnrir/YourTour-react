@@ -1,12 +1,12 @@
 import SectionMenu from "./SectionMenu.jsx";
-import styles from "./SectionHeader.module.scss";
+import s from "./SectionHeader.module.scss";
 
 const SectionHeader = (props) => {
   return (
     <header>
-      <h2 className={styles.heading}>{props.heading}</h2>
+      <h2 className={s.heading}>{props.heading}</h2>
       {props.description && (
-        <p className={styles.description}>{props.description}</p>
+        <p className={s.description}>{props.description}</p>
       )}
       {props.menu && <SectionMenu menuItems={props.menu} />}
     </header>

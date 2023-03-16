@@ -1,5 +1,5 @@
 import StoryItemElement from "./StoryItemElement.jsx";
-import styles from "./StoryGroup.module.scss";
+import s from "./StoryGroup.module.scss";
 
 const StoryGroup = (props) => {
   const storyItemsElements = props.storyItems.map((item, index) => (
@@ -14,7 +14,7 @@ const StoryGroup = (props) => {
     />
   ));
 
-  return <div className={styles.mainWrapper}>{storyItemsElements}</div>;
+  return <div className={s.mainWrapper}>{storyItemsElements}</div>;
 };
 
 export default StoryGroup;

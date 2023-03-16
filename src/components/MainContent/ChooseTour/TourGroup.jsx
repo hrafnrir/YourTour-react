@@ -1,5 +1,5 @@
 import TourItemElement from "./TourItemElement.jsx";
-import styles from "./TourGroup.module.scss";
+import s from "./TourGroup.module.scss";
 
 const TourGroup = (props) => {
   const tourItemsElements = props.tourItems.map((item, index) => (
@@ -12,7 +12,7 @@ const TourGroup = (props) => {
     />
   ));
 
-  return <div className={styles.mainWrapper}>{tourItemsElements}</div>;
+  return <div className={s.mainWrapper}>{tourItemsElements}</div>;
 };
 
 export default TourGroup;

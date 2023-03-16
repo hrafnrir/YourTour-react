@@ -1,6 +1,6 @@
 import HeaderLogo from "./HeaderLogo.jsx";
 import HeaderMenu from "./HeaderMenu.jsx";
-import styles from "./HeaderTop.module.scss";
+import s from "./HeaderTop.module.scss";
 
 const HeaderTop = (props) => {
   const tel = props.data.tel;
@@ -13,21 +13,21 @@ const HeaderTop = (props) => {
     props.headerType === "fixed" ? "fixedHeader" : "unfixedHeader";
   const stickyHeaderClass =
     props.headerType === "fixed"
-      ? styles["container_fixedHeader"] +
+      ? s["container_fixedHeader"] +
         " " +
-        styles["container_" + (props.sliderDown ? "slideDown" : "slideUp")]
+        s["container_" + (props.sliderDown ? "slideDown" : "slideUp")]
       : "";
 
   return (
     <div className={stickyHeaderClass}>
-      <div className={styles.container}>
+      <div className={s.container}>
         <HeaderLogo headerClass={headerClass} />
         <HeaderMenu
           menuItems={props.data.menuItems}
           headerClass={headerClass}
         />
         <a
-          className={styles.phone + " " + styles["phone_" + headerClass]}
+          className={s.phone + " " + s["phone_" + headerClass]}
           href={phoneHref}
         >
           {correctPhoneNumber}

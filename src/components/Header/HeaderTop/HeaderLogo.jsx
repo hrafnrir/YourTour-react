@@ -1,12 +1,10 @@
-import styles from "./HeaderLogo.module.scss";
+import s from "./HeaderLogo.module.scss";
 
 const HeaderLogo = (props) => {
   return (
-    <div className={styles.logo}>
+    <div className={s.logo}>
       <a
-        className={
-          styles.logo__img + " " + styles["logo__img_" + props.headerClass]
-        }
+        className={s.logo__img + " " + s["logo__img_" + props.headerClass]}
         href="/"
       >
         {""}

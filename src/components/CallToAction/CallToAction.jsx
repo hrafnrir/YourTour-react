@@ -1,19 +1,19 @@
-import styles from "./CallToAction.module.scss";
+import s from "./CallToAction.module.scss";
 
 const CallToAction = (props) => {
   return (
-    <aside className={styles.mainWrapper}>
-      <div className={styles.container}>
+    <aside className={s.mainWrapper}>
+      <div className={s.container}>
         <img
-          className={styles.img}
+          className={s.img}
           src={props.data.img.photo}
           alt={props.data.img.alt}
         />
         <div>
-          <h3 className={styles.heading}>{props.data.heading}</h3>
-          <p className={styles.description}>
+          <h3 className={s.heading}>{props.data.heading}</h3>
+          <p className={s.description}>
             {"Напиши на почту и узнай подробности на "}
-            <a className={styles.link} href={props.data.email.link}>
+            <a className={s.link} href={props.data.email.link}>
               {props.data.email.email}
             </a>
           </p>
