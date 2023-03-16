@@ -1,3 +1,4 @@
+import cn from "classnames";
 import InputMask from "react-input-mask";
 import s from "./Fields.module.scss";
 
@@ -43,7 +44,7 @@ const Fields = ({
           Направление
         </label>
         <select
-          className={s.field + " " + s.select}
+          className={cn(s.field, s.select)}
           value={trip}
           onChange={(e) => onFieldChange(e.target)}
           name="trip"
@@ -93,7 +94,7 @@ const Fields = ({
           Дата от
         </label>
         <InputMask
-          className={s.field + " " + s.date}
+          className={cn(s.field, s.date)}
           value={dateFrom}
           onChange={(e) => onFieldChange(e.target)}
           mask={dateMask}
@@ -110,7 +111,7 @@ const Fields = ({
           Дата до
         </label>
         <InputMask
-          className={s.field + " " + s.date}
+          className={cn(s.field, s.date)}
           value={dateBefore}
           onChange={(e) => onFieldChange(e.target)}
           mask={dateMask}
@@ -122,12 +123,12 @@ const Fields = ({
           required
         />
       </div>
-      <div className={s.commentContainer + " " + s.container}>
+      <div className={cn(s.commentContainer, s.container)}>
         <label className={s.label} htmlFor="comment-field">
           Комментарий
         </label>
         <textarea
-          className={s.field + " " + s.comment}
+          className={cn(s.field, s.comment)}
           value={comment}
           onChange={(e) => onFieldChange(e.target)}
           name="comment"

@@ -1,3 +1,4 @@
+import cn from "classnames";
 import HeaderLogo from "./HeaderLogo.jsx";
 import HeaderMenu from "./HeaderMenu.jsx";
 import s from "./HeaderTop.module.scss";
@@ -9,23 +10,24 @@ const HeaderTop = ({ data: { tel, menuItems }, headerType, sliderDown }) => {
     .toString()
     .replace(/(8)(\d{3})(\d{3})(\d{2})(\d{2})/g, "+7 $2 $3 $4 $5");
 
-  const headerClass = headerType === "fixed" ? "fixedHeader" : "unfixedHeader";
-  const stickyHeaderClass =
-    headerType === "fixed"
-      ? s["container_fixedHeader"] +
-        " " +
-        s["container_" + (sliderDown ? "slideDown" : "slideUp")]
-      : "";
+  const isHeaderFixed = headerType === "fixed";
+  const stickyHeaderClass = cn({
+    [s.container_fixedHeader]: isHeaderFixed,
+    [s.container_slideDown]: isHeaderFixed && sliderDown,
+    [s.container_slideUp]: isHeaderFixed && !sliderDown,
+  });
+
+  const phoneClass = cn(s.phone, {
+    [s.phone_fixedHeader]: isHeaderFixed,
+    [s.phone_unfixedHeader]: !isHeaderFixed,
+  });
 
   return (
     <div className={stickyHeaderClass}>
       <div className={s.container}>
-        <HeaderLogo headerClass={headerClass} />
-        <HeaderMenu menuItems={menuItems} headerClass={headerClass} />
-        <a
-          className={s.phone + " " + s["phone_" + headerClass]}
-          href={phoneHref}
-        >
+        <HeaderLogo isHeaderFixed={isHeaderFixed} />
+        <HeaderMenu menuItems={menuItems} isHeaderFixed={isHeaderFixed} />
+        <a className={phoneClass} href={phoneHref}>
           {correctPhoneNumber}
         </a>
       </div>

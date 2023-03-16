@@ -1,11 +1,13 @@
+import cn from "classnames";
 import s from "./Footer.module.scss";
 
 const Footer = ({ data: { socialNetworks } }) => {
   const socialNetworksElements = socialNetworks.map((item, index) => (
     <a
-      className={
-        s.socialNetworks__item + " " + s["socialNetworks__item_" + item.class]
-      }
+      className={cn(
+        s.socialNetworks__item,
+        s["socialNetworks__item_" + item.class]
+      )}
       key={index.toString()}
       href={item.link}
     >
