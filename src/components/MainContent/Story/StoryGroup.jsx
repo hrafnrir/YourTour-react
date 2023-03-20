@@ -1,10 +1,10 @@
 import StoryItemElement from "./StoryItemElement.jsx";
-import styles from "./StoryGroup.module.scss";
+import s from "./StoryGroup.module.scss";
 
-const StoryGroup = (props) => {
-  const storyItemsElements = props.storyItems.map((item, index) => (
+const StoryGroup = ({ storyItems }) => {
+  const storyItemsElements = storyItems.map((item, index) => (
     <StoryItemElement
-      key={index.toString()}
+      key={index}
       heading={item.heading}
       description={item.description}
       list={item.list}
@@ -14,7 +14,7 @@ const StoryGroup = (props) => {
     />
   ));
 
-  return <div className={styles.mainWrapper}>{storyItemsElements}</div>;
+  return <div className={s.mainWrapper}>{storyItemsElements}</div>;
 };
 
 export default StoryGroup;

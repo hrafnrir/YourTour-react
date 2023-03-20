@@ -1,23 +1,23 @@
-import styles from "./Agreement.module.scss";
+import s from "./Agreement.module.scss";
 
-const Agreement = (props) => {
+const Agreement = ({ licenseLink, agreement, onAgreementChange }) => {
   return (
-    <div className={styles.container}>
+    <div className={s.container}>
       <input
-        className={styles.checkbox}
-        checked={props.agreement}
-        onChange={(e) => props.onAgreementChange(e.target)}
+        className={s.checkbox}
+        checked={agreement}
+        onChange={(e) => onAgreementChange(e.target)}
         type="checkbox"
         name="agreement"
         id="agreement-field"
         required
       />
-      <label className={styles.label} htmlFor="agreement-field">
+      <label className={s.label} htmlFor="agreement-field">
         {""}
       </label>
-      <span className={styles.terms}>
+      <span className={s.terms}>
         {"Нажимая кнопку, я принимаю условия "}
-        <a className={styles.terms__link} href={props.licenseLink}>
+        <a className={s.terms__link} href={licenseLink}>
           Лицензионного договора
         </a>
       </span>

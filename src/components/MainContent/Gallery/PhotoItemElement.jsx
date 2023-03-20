@@ -1,11 +1,10 @@
-import styles from "./PhotoItemElement.module.scss";
+import cn from "classnames";
+import s from "./PhotoItemElement.module.scss";
 
-const PhotoItemElement = (props) => {
+const PhotoItemElement = ({ device, photo, alt }) => {
   return (
-    <figcaption
-      className={styles.photo + " " + styles["photo_" + props.device]}
-    >
-      <img className={styles.originalImg} src={props.photo} alt={props.alt} />
+    <figcaption className={cn(s.photo, s[`photo_${device}`])}>
+      <img className={s.originalImg} src={photo} alt={alt} />
     </figcaption>
   );
 };

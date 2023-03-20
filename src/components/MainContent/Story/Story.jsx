@@ -1,17 +1,17 @@
 import SectionHeader from "../SectionHeader/SectionHeader.jsx";
 import StoryGroup from "./StoryGroup.jsx";
-import styles from "./../SectionWrapper.module.scss";
+import s from "./../SectionWrapper.module.scss";
 
-const Story = (props) => {
+const Story = ({ data: { heading, description, storyItems } }) => {
   return (
-    <section className={styles.mainWrapper}>
-      <div className={styles.container_medium}>
+    <section className={s.mainWrapper}>
+      <div className={s.container_medium}>
         <SectionHeader
-          heading={props.data.heading}
-          description={props.data.description}
+          heading={heading}
+          description={description}
           menu={false}
         />
-        <StoryGroup storyItems={props.data.storyItems} />
+        <StoryGroup storyItems={storyItems} />
       </div>
     </section>
   );

@@ -1,18 +1,14 @@
-import styles from "./ReviewItemElement.module.scss";
+import s from "./ReviewItemElement.module.scss";
 
-const ReviewItemElement = (props) => {
+const ReviewItemElement = ({ name, tour, review, photo }) => {
   return (
-    <article className={styles.item}>
-      <p className={styles.text}>{props.review}</p>
+    <article className={s.item}>
+      <p className={s.text}>{review}</p>
       <div>
-        <h3 className={styles.name}>{props.name}</h3>
-        <span className={styles.tour}>{props.tour}</span>
+        <h3 className={s.name}>{name}</h3>
+        <span className={s.tour}>{tour}</span>
       </div>
-      <img
-        className={styles.photo}
-        src={props.photo}
-        alt="Фото автора отзыва"
-      />
+      <img className={s.photo} src={photo} alt="Фото автора отзыва" />
     </article>
   );
 };

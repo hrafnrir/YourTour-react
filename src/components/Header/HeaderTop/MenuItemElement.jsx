@@ -1,13 +1,16 @@
-import styles from "./MenuItemElement.module.scss";
+import cn from "classnames";
+import s from "./MenuItemElement.module.scss";
 
-const MenuItemElement = (props) => {
+const MenuItemElement = ({ value, link, isHeaderFixed }) => {
+  const linkClass = cn(s.link, {
+    [s.link_fixedHeader]: isHeaderFixed,
+    [s.link_unfixedHeader]: !isHeaderFixed,
+  });
+
   return (
-    <li className={styles.item}>
-      <a
-        className={styles.link + " " + styles["link_" + props.headerClass]}
-        href={props.link}
-      >
-        {props.value}
+    <li className={s.item}>
+      <a className={linkClass} href={link}>
+        {value}
       </a>
     </li>
   );

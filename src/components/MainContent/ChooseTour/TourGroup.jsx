@@ -1,10 +1,10 @@
 import TourItemElement from "./TourItemElement.jsx";
-import styles from "./TourGroup.module.scss";
+import s from "./TourGroup.module.scss";
 
-const TourGroup = (props) => {
-  const tourItemsElements = props.tourItems.map((item, index) => (
+const TourGroup = ({ tourItems }) => {
+  const tourItemsElements = tourItems.map((item, index) => (
     <TourItemElement
-      key={index.toString()}
+      key={index}
       heading={item.heading}
       price={item.price}
       link={item.link}
@@ -12,7 +12,7 @@ const TourGroup = (props) => {
     />
   ));
 
-  return <div className={styles.mainWrapper}>{tourItemsElements}</div>;
+  return <div className={s.mainWrapper}>{tourItemsElements}</div>;
 };
 
 export default TourGroup;

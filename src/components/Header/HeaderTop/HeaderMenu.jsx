@@ -1,19 +1,19 @@
 import MenuItemElement from "./MenuItemElement.jsx";
-import styles from "./HeaderMenu.module.scss";
+import s from "./HeaderMenu.module.scss";
 
-const HeaderMenu = (props) => {
-  const menuItemsElements = props.menuItems.map((item, index) => (
+const HeaderMenu = ({ menuItems, isHeaderFixed }) => {
+  const menuItemsElements = menuItems.map((item, index) => (
     <MenuItemElement
-      key={index.toString()}
+      key={index}
       value={item.item}
       link={item.link}
-      headerClass={props.headerClass}
+      isHeaderFixed={isHeaderFixed}
     />
   ));
 
   return (
-    <nav className={styles.menu}>
-      <ul className={styles.list}>{menuItemsElements}</ul>
+    <nav className={s.menu}>
+      <ul className={s.list}>{menuItemsElements}</ul>
     </nav>
   );
 };

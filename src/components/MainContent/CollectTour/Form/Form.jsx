@@ -2,10 +2,12 @@ import { useState } from "react";
 import Fields from "./Fields.jsx";
 import Age from "./Age.jsx";
 import Agreement from "./Agreement.jsx";
-import styles from "./Form.module.scss";
+import s from "./Form.module.scss";
 
-const Form = (props) => {
-  const [values, setValues] = useState(props.data.initialState);
+const Form = ({
+  data: { initialState, selectOptions, licenseAgreementLink },
+}) => {
+  const [values, setValues] = useState(initialState);
 
   const handleChange = (element) => {
     const name = element.name;
@@ -23,18 +25,18 @@ const Form = (props) => {
 
   const handleReset = (event) => {
     event.preventDefault();
-    setValues(props.data.initialState);
+    setValues(initialState);
   };
 
   return (
     <form
-      className={styles.container}
+      className={s.container}
       onSubmit={handleSubmit}
       onReset={handleReset}
       method="POST"
     >
       <Fields
-        options={props.data.selectOptions}
+        options={selectOptions}
         name={values.name}
         trip={values.trip}
         email={values.email}
@@ -46,12 +48,12 @@ const Form = (props) => {
       />
       <Age age={values.age} onAgeChange={handleChange} />
       <Agreement
-        licenseLink={props.data.licenseAgreementLink}
+        licenseLink={licenseAgreementLink}
         agreement={values.agreement}
         onAgreementChange={handleChange}
       />
-      <input className={styles.btnSubmit} type="submit" value="Найти тур" />
-      <input className={styles.btnReset} type="reset" value="Сбросить" />
+      <input className={s.btnSubmit} type="submit" value="Найти тур" />
+      <input className={s.btnReset} type="reset" value="Сбросить" />
     </form>
   );
 };

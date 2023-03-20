@@ -1,17 +1,17 @@
 import PhotoItemElement from "./PhotoItemElement.jsx";
-import styles from "./PhotoGroup.module.scss";
+import s from "./PhotoGroup.module.scss";
 
-const PhotoGroup = (props) => {
-  const photoItemsElements = props.photoItems.map((item, index) => (
+const PhotoGroup = ({ photoItems }) => {
+  const photoItemsElements = photoItems.map((item, index) => (
     <PhotoItemElement
-      key={index.toString()}
+      key={index}
       device={item.device}
       photo={item.photo}
       alt={item.alt}
     />
   ));
 
-  return <div className={styles.mainWrapper}>{photoItemsElements}</div>;
+  return <div className={s.mainWrapper}>{photoItemsElements}</div>;
 };
 
 export default PhotoGroup;

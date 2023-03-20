@@ -1,10 +1,10 @@
 import ReviewItemElement from "./ReviewItemElement.jsx";
-import styles from "./ReviewGroup.module.scss";
+import s from "./ReviewGroup.module.scss";
 
-const ReviewGroup = (props) => {
-  const reviewItemsElements = props.reviewItems.map((item, index) => (
+const ReviewGroup = ({ reviewItems }) => {
+  const reviewItemsElements = reviewItems.map((item, index) => (
     <ReviewItemElement
-      key={index.toString()}
+      key={index}
       name={item.name}
       tour={item.tour}
       review={item.review}
@@ -12,7 +12,7 @@ const ReviewGroup = (props) => {
     />
   ));
 
-  return <div className={styles.mainWrapper}>{reviewItemsElements}</div>;
+  return <div className={s.mainWrapper}>{reviewItemsElements}</div>;
 };
 
 export default ReviewGroup;
